@@ -1,5 +1,5 @@
-# camilaMusic Telegram Bot - This is a pyrogram bot based on pytgcalls for playing songs or audio files in Telegram group voice chat
-[![camila](https://telegra.ph/file/87f281fe90bb91d3d6193.jpg)](https://t.me/camila_support)
+# Popcornmusic Telegram Bot - This is a pyrogram bot based on pytgcalls for playing songs or audio files in Telegram group voice chat
+[![camila](https://telegra.ph/file/de160a8fa6ec59247e280.jpg)](https://t.me/stylishUser)
 
 
 # How To Host
@@ -48,5 +48,5 @@ Get STRING_NAME from here:
 - `/userbotleave` - remove assistant from your chat
 - `/admincache` - Refresh admin list
 
-#[Need Help Join support](https://t.me/warbotZsupport)
+#[Need Help Join support](https://t.me/stylishUser)
 
