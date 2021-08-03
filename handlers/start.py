@@ -24,7 +24,7 @@ Music Assistant - @popcornXhelper
             [
                 [
                     InlineKeyboardButton(
-                      "✨CamilaAssistant", url="https://t.me/popcornXhelper",
+                      "🎧Assistantbot", url="https://t.me/popcornXhelper",
                     )
                 ],
                 [
