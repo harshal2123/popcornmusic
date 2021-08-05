@@ -9,43 +9,43 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
     & ~ filters.edited
 )
 async def start_(client: Client, message: Message):
-    await message.reply_sticker("CAACAgUAAx0CQ8QTWQACCD9gpSGtPso-JueMmC6tCptx2H6VjAACngEAAmpqaFeIQbV46r_aFh8E")
+    await message.reply_sticker("https://telegra.ph/file/de160a8fa6ec59247e280.jpg")
     await message.reply_text(
         f"""<b>Hi {message.from_user.first_name}!
-\nI can play music in your group's voice chat
-
+\nI can play music in your
+\ngroup's voice chat
 Music Assistant - @popcornXhelper
-\nTo add in your group contact us at @stylishUser or do /userbotjoin
+\nTo add in your group contact us at @stylishUser
 \nHit /help list of available commands.
  </b>""",
       
        
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                      "🎧Assistantbot", url="https://t.me/popcornXhelper",
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
-                        "💬 Help Group", url="https://t.me/StylishUser"
-                    ),
-                    InlineKeyboardButton(
-                        "Chatting group", url="https://t.me/EnglishChatting_Club"
-                    ),
-                    InlineKeyboardButton(
-                        "✨GitHub✨", url="http://www.github.com/mohsinHsn/popcornmusic"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
-                        "➕ Add To Your Group ➕", url="https://t.me/popcornXplayerbot?startgroup=true"
-                    ) 
-                ]
-            ]
-        )
-    )
+       reply_markup=InlineKeyboardMarkup(
+           [
+               [
+                   InlineKeyboardButton(
+                     "🎧Assistantbot", url="https://t.me/popcornXhelper",
+                   )
+               ],
+               [
+                   InlineKeyboardButton(
+                       "💬 Help Group", url="https://t.me/StylishUser"
+                   ),
+                   InlineKeyboardButton(
+                       "Chatting group", url="https://t.me/EnglishChatting_Club"
+                   ),
+                   InlineKeyboardButton(
+                       "✨GitHub✨", url="http://www.github.com/mohsinHsn/popcornmusic"
+                   )
+               ],
+               [
+                   InlineKeyboardButton(
+                       "➕ Add To Your Group ➕", url="https://t.me/popcornXplayerbot?startgroup=true"
+                   ) 
+               ]
+           ]
+       )
+   )
 
 @Client.on_message(
     filters.command("start")
@@ -54,7 +54,7 @@ Music Assistant - @popcornXhelper
 )
 async def start(client: Client, message: Message):
     await message.reply_text(
-        "💁🏻‍♂️ Do you want to search for a YouTube video?",
+        "Do you want to search for a YouTube video?",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -64,10 +64,10 @@ async def start(client: Client, message: Message):
                 ],    
                 [    
                     InlineKeyboardButton(
-                        "✅ Yes", switch_inline_query_current_chat=""
+                        "Yes", switch_inline_query_current_chat=""
                     ),
                     InlineKeyboardButton(
-                        "No ❌", callback_data="close"
+                        "No", callback_data="close"
                     )
                 ]
             ]
