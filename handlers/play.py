@@ -486,7 +486,7 @@ async def play(_, message: Message):
                                
                     InlineKeyboardButton('📖 Playlist', callback_data='playlist'),
                     InlineKeyboardButton(
-                        text="Watch On YouTube 🎬",
+                        text="Watch video",
                         url=f"{url}")
 
                 ],
