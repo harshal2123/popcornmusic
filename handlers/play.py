@@ -302,7 +302,7 @@ async def m_cb(b, cb):
             temp.append(t)
         now_playing = temp[0][0]
         by = temp[0][1].mention(style='md')
-        msg = "**Now Playing** in {}".format(cb.message.chat.title)
+        msg = "Now Playing in {}".format(cb.message.chat.title)
         msg += "\n- "+ now_playing
         msg += "\n- Req by "+by
         temp.pop(0)
@@ -399,7 +399,7 @@ async def m_cb(b, cb):
 @Client.on_message(command("play") & other_filters)
 async def play(_, message: Message):
     global que
-    lel = await message.reply("🔄 **Processing**")
+    lel = await message.reply("🎵Processing")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
 
@@ -449,7 +449,7 @@ async def play(_, message: Message):
         return     
     sender_id = message.from_user.id
     sender_name = message.from_user.first_name
-    await lel.edit("🔎 **Finding**")
+    await lel.edit("🔎 searching")
     sender_id = message.from_user.id
     user_id = message.from_user.id
     sender_name = message.from_user.first_name
@@ -460,7 +460,7 @@ async def play(_, message: Message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    await lel.edit("🎵 **Processing**")
+    await lel.edit("🎵Processing")
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -476,7 +476,7 @@ async def play(_, message: Message):
         views = results[0]["views"]
 
     except Exception as e:
-        await lel.edit("Something wrong with popcorn.Try another song or maybe spell it properly.")
+        await lel.edit("Something wrong.Try another song or maybe spell it properly.")
         print(str(e))
         return
 
@@ -485,10 +485,6 @@ async def play(_, message: Message):
                 [
                                
                     InlineKeyboardButton('📖 Playlist', callback_data='playlist'),
-                    InlineKeyboardButton('Menu ⏯ ', callback_data='menu')
-                
-                ],                     
-                [
                     InlineKeyboardButton(
                         text="Watch On YouTube 🎬",
                         url=f"{url}")
@@ -516,7 +512,7 @@ async def play(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
         photo="final.png", 
-        caption=f"#⃣ Your requested song **queued** at position {position}!",
+        caption=f"Your requested song **queued** at position {position}!",
         reply_markup=keyboard)
         os.remove("final.png")
         return await lel.delete()
@@ -533,7 +529,7 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption="✯Popcorn Music✯▶️ **Playing** here the song requested by {} 😜".format(
+        caption="Popcorn Music ▶️ Playing here, the song requested by {} 😜".format(
         message.from_user.mention()
         ),
     )
@@ -548,7 +544,7 @@ async def play(_, message: Message):
 )
 async def deezer(client: Client, message_: Message):
     global que
-    lel = await message_.reply("🔄 **Processing**")
+    lel = await message_.reply("🎵Processing")
     administrators = await get_administrators(message_.chat)
     chid = message_.chat.id
     try:
@@ -619,9 +615,6 @@ async def deezer(client: Client, message_: Message):
          [   
              [
                  InlineKeyboardButton('📖 Playlist', callback_data='playlist'),
-                 InlineKeyboardButton('Menu ⏯ ', callback_data='menu')     
-             ],                     
-             [
                  InlineKeyboardButton(
                      text="Listen On Deezer 🎬",
                      url=f"{url}")
@@ -647,9 +640,9 @@ async def deezer(client: Client, message_: Message):
         loc = file_path
         appendable = [s_name, r_by, loc]
         qeue.append(appendable)
-        await res.edit_text(f"Camila ᴍᴜꜱɪᴄ✯=#️⃣ Queued at position {position}")
+        await res.edit_text(f"popcorn music=#️⃣ Queued at position {position}")
     else:
-        await res.edit_text("Camila ᴍᴜꜱɪᴄ✯=▶️ Playing.....")
+        await res.edit_text("popcorn music=▶️ Playing.....")
         chat_id = message_.chat.id
         que[chat_id] = []
         qeue = que.get(message_.chat.id)
@@ -782,12 +775,12 @@ async def jiosaavn(client: Client, message_: Message):
             chat_id=message_.chat.id,
             reply_markup=keyboard,
             photo="final.png",
-            caption=f"Popcorn ᴍᴜꜱɪᴄ✯=#️⃣ Queued at position {position} , Made by @tithonus",
+            caption=f"Popcorn ᴍᴜꜱɪᴄ #️⃣ Queued at position {position} , Made by @tithonus",
         
         )           
            
     else:
-        await res.edit_text("popcorn ᴍᴜꜱɪᴄ✯=▶️ Playing.....")
+        await res.edit_text("popcorn ᴍᴜꜱɪᴄ ▶️ Playing.....")
         chat_id = message_.chat.id
         que[chat_id] = []
         qeue = que.get(message_.chat.id)
